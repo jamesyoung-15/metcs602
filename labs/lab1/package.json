@@ -1,0 +1,19 @@
+{
+  "name": "metcs602-readline",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jasmine",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@everapi/currencyapi-js": "1.0.6",
+    "jasmine": "^5.10.0",
+    "toastr": "^2.1.4"
+  },
+  "keywords": [],
+  "author": "James Young (jyyoung@bu.edu)",
+  "license": "MIT",
+  "description": "Lab 1"
+}
