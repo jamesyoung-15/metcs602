@@ -1,0 +1,27 @@
+{
+  "name": "hw1",
+  "version": "1.0.0",
+  "description": "The initial temperature is always in Fahrenheit (F).",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && cp client/{index.html,styles.css} dist/client",
+    "test": "npm run build && npx jasmine --config=tests/jasmine-config.json",
+    "start": "node dist/server/main.js",
+    "cli": "node dist/cli.js"
+  },
+  "keywords": [],
+  "author": "James Young (jyyoung@bu.edu)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.3.1"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.3",
+    "@types/jasmine": "^5.1.9",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jasmine": "^5.10.0",
+    "prettier": "^3.6.2"
+  }
+}
