@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lottery Simulation</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Welcome to the Lottery Simulation</h1>
+    <form action="" class="container">
+      <h2>Your Lottery Ticket</h2>
+      <!-- User Input -->
+      <label for="guessNumbers">Enter your lottery numbers (1-69):</label>
+      <input
+        type="text"
+        id="guessNumbers"
+        name="guessNumbers"
+        placeholder="e.g. 5,12,23,34,45"
+        required
+      />
+
+      <label for="guessPowerball">Enter your Powerball number (1-26):</label>
+      <input
+        type="number"
+        id="guessPowerball"
+        name="guessPowerball"
+        min="1"
+        max="26"
+        required
+      />
+
+      <button type="submit">Submit</button>
+    </form>
+    <!-- Most Recent Result -->
+    <div id="resultMessage" class="container immediateResult">
+      <h2>Your Most Recent Result</h2>
+    </div>
+    <div class="container">
+      <h2>Past Lottery Results</h2>
+      <p>Refresh the page to see the latest results.</p>
+      <ul id="resultsList">
+        <!-- Past results will be populated here -->
+      </ul>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

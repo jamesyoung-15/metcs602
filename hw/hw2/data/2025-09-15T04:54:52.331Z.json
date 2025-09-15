@@ -1,0 +1,15 @@
+{
+  "lotteryData": {
+    "dateGenerated": "2025-09-15T04:54:52.331Z",
+    "lotteryNumbers": [4, 27, 52, 53, 63],
+    "powerballNumber": 24,
+    "is_deleted": false
+  },
+  "userInput": {
+    "guessNumbers": [1, 2, 3, 4, 5],
+    "guessPowerball": 22
+  },
+  "matchedNumbers": [4],
+  "matchedPowerball": false,
+  "prize": "$100"
+}
