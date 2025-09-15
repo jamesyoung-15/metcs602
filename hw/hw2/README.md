@@ -2,7 +2,7 @@
 
 Lottery number simulator using Typescript, with a CLI and web app game. Frontend w/ HTML, CSS, TS, backend w/ Express and Node.
 
-Testing with Jest. Stores historic results in data directory. Each game generates it's own JSON file with timestamp as file name.
+Testing with Jest. Stores historic results in data directory, ie. `hw2/data`. Each game generates it's own JSON file with timestamp as file name.
 
 ## Usage
 
