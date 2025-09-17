@@ -1,0 +1,26 @@
+{
+  "name": "metcs602-lab3",
+  "version": "1.0.0",
+  "description": "Hello Express",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": {
+    "name": "James Young",
+    "email": "jyyoung@bu.edu"
+  },
+  "scripts": {
+    "dev": "node index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
