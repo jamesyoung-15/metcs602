@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Friendtac</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Friendtac</h1>
+    <p>Reminder app to check in on a friend/contact!</p>
+    <!-- display friends -->
+    <div id="contact-list" class="container">
+        <ul id="contacts">
+        </ul>
+    </div>
+    <!-- form to add a new friend -->
+     <form action="" method="post" class="container" id="add-contact-form">
+        <h2>Add a new contact</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" maxlength="512" required />
+        
+        <label for="contactPoint">Contact Point (email or phone):</label>
+        <input type="text" id="contactPoint" name="contactPoint" required />
+        
+        <label for="notes">Notes:</label>
+        <textarea id="notes" name="notes" maxlength="1024"></textarea>
+
+        <label for="reminderDate">Reminder Date:</label>
+        <input type="date" id="reminderDate" name="reminderDate" />
+        
+        <label for="reminderTime">Reminder Time:</label>
+        <input type="time" id="reminderTime" name="reminderTime" />
+        
+        <button type="submit">Add Contact</button>
+     </form>
+     <!-- form to update a friend -->
+      <form action="" class="container" id="update-contact-form">
+        <h2>Update contact</h2>
+        <select name="id" id="update-id">
+            <option value="" disabled selected>Select contact to update</option>
+        </select>
+
+        <label for="update-name">Name:</label>
+        <input type="text" id="update-name" name="name" maxlength="512" required />
+        
+        <label for="update-contactPoint">Contact Point (email or phone):</label>
+        <input type="text" id="update-contactPoint" name="contactPoint" required />
+        
+        <label for="update-notes">Notes:</label>
+        <textarea id="update-notes" name="notes" maxlength="1024"></textarea>
+
+        <label for="update-reminderDate">Reminder Date:</label>
+        <input type="date" id="update-reminderDate" name="reminderDate" />
+        
+        <label for="update-reminderTime">Reminder Time:</label>
+        <input type="time" id="update-reminderTime" name="reminderTime" />
+        
+        <button type="submit">Update Contact</button>
+      </form>
+    <script src="index.js"></script>
+  </body>
+</html>

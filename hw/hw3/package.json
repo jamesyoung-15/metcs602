@@ -1,0 +1,44 @@
+{
+  "name": "metcs602-hw3-friendtac",
+  "version": "1.0.0",
+  "description": "Friendtac - a reminder app to prompt users to check in with friends they haven't connected with in a while.",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": {
+    "name": "James Young",
+    "email": "jyyoung@bu.edu"
+  },
+  "contributors": [],
+  "scripts": {
+    "build": "tsc && mkdir -p dist/client && cp client/{index.html,styles.css,index.js} dist/client",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "start": "node ./dist/src/app.js"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node-notifier": "^8.0.5",
+    "@types/pino": "^7.0.4",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "node-notifier": "^10.0.1",
+    "pino": "^9.11.0",
+    "pino-http": "^10.5.0",
+    "prettier": "^3.6.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/supertest": "^6.0.3",
+    "jest": "^30.1.3",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.4"
+  }
+}
