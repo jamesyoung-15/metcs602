@@ -23,9 +23,14 @@ describe("Course API", () => {
       year: 2023,
       enabled: false,
     });
-    const res = await request(app).get("/api/courses?enabled=true");
+    const res = await request(app).get("/api/courses/enabled");
     expect(res.statusCode).toBe(200);
     expect(res.body.length).toBe(1);
     expect(res.body[0].courseName).toBe("Math 101");
+  });
+  it("should error when getting non-existent student enrollments", async () => {
+    const res = await request(app).get("/api/enrollments/99999");
+    expect(res.statusCode).toBe(404);
+    expect(res.body.error).toBe("Student not found");
   });
 });

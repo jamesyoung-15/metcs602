@@ -20,3 +20,31 @@ export const createCourse = async (req: Request, res: Response) => {
     res.status(400).json({ error: "Failed to create course" });
   }
 };
+
+// Get all enabled courses from mongoDB
+export const getEnabledCourses = async (req: Request, res: Response) => {
+  try {
+    const courses = await Course.find({ enabled: true });
+    res.json(courses);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch enabled courses" });
+  }
+};
+
+// Update an existing course in mongoDB
+export const updateCourse = async (req: Request, res: Response) => {
+  try {
+    const { courseName, semester, year, enabled } = req.body;
+    const course = await Course.findByIdAndUpdate(
+      req.params.id,
+      { courseName, semester, year, enabled },
+      { new: true }
+    );
+    if (!course) {
+      return res.status(404).json({ error: "Course not found" });
+    }
+    res.json(course);
+  } catch (error) {
+    res.status(400).json({ error: "Failed to update course" });
+  }
+};

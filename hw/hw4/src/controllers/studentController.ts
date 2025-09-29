@@ -11,12 +11,70 @@ export const getStudents = async (req: Request, res: Response) => {
   }
 };
 
+// Get a student by publicStudentId from mongoDB
+export const getStudentById = async (req: Request, res: Response) => {
+  try {
+    const student = await Student.findOne({ publicStudentId: req.params.id });
+    if (!student || student.isDeleted) {
+      return res.status(404).json({ error: "Student not found" });
+    }
+    res.json(student);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch student" });
+  }
+};
+
 // Create a new student in mongoDB
 export const createStudent = async (req: Request, res: Response) => {
   try {
-    const student = await Student.create(req.body);
+    // check if publicStudentId already exists
+    const existingStudent = await Student.findOne({ publicStudentId: req.body.publicStudentId });
+    if (existingStudent) {
+      return res.status(400).json({ error: "publicStudentId already exists" });
+    }
+    // destructure fields from req.body, create new Student instance
+    const { firstName, middleName, lastName, publicStudentId } = req.body;
+    const student = new Student({ firstName, middleName, lastName, publicStudentId });
+    await student.save();
     res.status(201).json(student);
   } catch (error) {
     res.status(400).json({ error: "Failed to create student" });
+  }
+};
+
+// Update an existing student in mongoDB
+export const updateStudent = async (req: Request, res: Response) => {
+  try {
+    const { firstName, middleName, lastName } = req.body;
+    // find by publicStudentId instead of _id
+    const student = await Student.findOneAndUpdate(
+      { publicStudentId: req.params.id },
+      { firstName, middleName, lastName },
+      { new: true }
+    );
+    if (!student) {
+      return res.status(404).json({ error: "Student not found" });
+    }
+    res.json(student);
+  } catch (error) {
+    res.status(400).json({ error: "Failed to update student" });
+  }
+};
+
+// Soft delete a student by setting isDeleted field
+export const deleteStudent = async (req: Request, res: Response) => {
+  try {
+    // find by publicStudentId instead of _id, set isDeleted to current date
+    const student = await Student.findOneAndUpdate(
+      { publicStudentId: req.params.id },
+      { isDeleted: new Date() },
+      { new: true }
+    );
+    if (!student) {
+      return res.status(404).json({ error: "Student not found" });
+    }
+    res.json({ message: "Student deleted successfully" });
+  } catch (error) {
+    res.status(400).json({ error: "Failed to delete student" });
   }
 };

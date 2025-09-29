@@ -14,21 +14,22 @@ afterEach(async () => {
   await clearTestDB(); // Clear database state after each test
 });
 
+// Test CRUD operations for Student API
 describe("Student API", () => {
   it("should create a new student", async () => {
     const res = await request(app).post("/api/students").send({
-      firstName: "John",
-      lastName: "Doe",
+      firstName: "James",
+      lastName: "Young",
       publicStudentId: "12345",
     });
     expect(res.statusCode).toBe(201);
-    expect(res.body.firstName).toBe("John");
+    expect(res.body.firstName).toBe("James");
   });
 
   it("should fetch all students", async () => {
     await request(app).post("/api/students").send({
-      firstName: "John",
-      lastName: "Doe",
+      firstName: "James",
+      lastName: "Young",
       publicStudentId: "12345",
     });
     const res = await request(app).get("/api/students");
@@ -38,26 +39,40 @@ describe("Student API", () => {
 
   it("should fetch a student by ID", async () => {
     const student = await request(app).post("/api/students").send({
-      firstName: "John",
-      lastName: "Doe",
+      firstName: "James",
+      lastName: "Young",
       publicStudentId: "12345",
     });
-    const studentId = student.body._id;
+    const studentId = "12345";
     const res = await request(app).get(`/api/students/${studentId}`);
     expect(res.statusCode).toBe(200);
-    expect(res.body.firstName).toBe("John");
+    expect(res.body.firstName).toBe("James");
   });
 
   it("should delete a student", async () => {
     const student = await request(app).post("/api/students").send({
-      firstName: "John",
-      lastName: "Doe",
+      firstName: "James",
+      lastName: "Young",
       publicStudentId: "12345",
     });
-    const studentId = student.body._id;
+    const studentId = "12345";
     const res = await request(app).delete(`/api/students/${studentId}`);
     expect(res.statusCode).toBe(200);
     const fetchDeleted = await request(app).get(`/api/students/${studentId}`);
     expect(fetchDeleted.statusCode).toBe(404);
+  });
+  it("should not create a student with duplicate publicStudentId", async () => {
+    await request(app).post("/api/students").send({
+      firstName: "James",
+      lastName: "Young",
+      publicStudentId: "12345",
+    });
+    const res = await request(app).post("/api/students").send({
+      firstName: "Jimbo",
+      lastName: "You",
+      publicStudentId: "12345",
+    });
+    expect(res.statusCode).toBe(400);
+    expect(res.body.error).toBe("publicStudentId already exists");
   });
 });

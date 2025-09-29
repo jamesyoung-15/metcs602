@@ -18,4 +18,10 @@ const courseSchema = new Schema<Course>({
   enabled: { type: Boolean, required: true, default: false },
 });
 
+export interface CourseEnrollmentResponse {
+  course: any; // or the actual Course type if you have it
+  GPA?: number;
+  dateEnrolled: Date;
+};
+
 export default mongoose.model<Course>("Course", courseSchema);
