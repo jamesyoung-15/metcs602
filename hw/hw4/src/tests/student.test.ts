@@ -2,9 +2,17 @@ import request from "supertest";
 import app from "../app.js";
 import { connectTestDB, closeTestDB, clearTestDB } from "./setup.js";
 
-beforeAll(connectTestDB);
-afterAll(closeTestDB);
-afterEach(clearTestDB);
+beforeAll(async () => {
+  await connectTestDB(); // Connect to test DB before running tests
+});
+
+afterAll(async () => {
+  await closeTestDB(); // Close test DB after all tests
+});
+
+afterEach(async () => {
+  await clearTestDB(); // Clear database state after each test
+});
 
 describe("Student API", () => {
   it("should create a new student", async () => {

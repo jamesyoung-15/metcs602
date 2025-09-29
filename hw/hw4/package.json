@@ -15,7 +15,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon src/server.ts",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test": "NODE_ENV=test node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "start": "node dist/server.js"
   },
   "devDependencies": {
