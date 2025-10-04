@@ -20,7 +20,7 @@ export const getStudentById = async (req: Request, res: Response) => {
     }
     res.json(student);
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch student" });
+    res.status(500).json({ error: "Failed to fetch student, " + error });
   }
 };
 
@@ -34,11 +34,12 @@ export const createStudent = async (req: Request, res: Response) => {
     }
     // destructure fields from req.body, create new Student instance
     const { firstName, middleName, lastName, publicStudentId } = req.body;
-    const student = new Student({ firstName, middleName, lastName, publicStudentId });
+    const student = new Student({ 
+      firstName : firstName, middleName: middleName || undefined, lastName: lastName, publicStudentId: publicStudentId });
     await student.save();
     res.status(201).json(student);
   } catch (error) {
-    res.status(400).json({ error: "Failed to create student" });
+    res.status(400).json({ error: "Failed to create student, " + error });
   }
 };
 
@@ -57,7 +58,7 @@ export const updateStudent = async (req: Request, res: Response) => {
     }
     res.json(student);
   } catch (error) {
-    res.status(400).json({ error: "Failed to update student" });
+    res.status(400).json({ error: "Failed to update student, " + error });
   }
 };
 

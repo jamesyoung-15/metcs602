@@ -24,6 +24,16 @@ export const createEnrollment = async (req: Request, res: Response) => {
       return res.status(404).json({ error: "Student not found" });
     }
 
+    // check if mongodb student._id is already enrolled in courseId
+    const existingEnrollment = await Enrollment.findOne({ 
+      "courses.student": student._id,
+      "courses.course": courseId,
+      isDeleted: { $exists: false } 
+    });
+    if (existingEnrollment) {
+      return res.status(400).json({ error: "Student is already enrolled in this course" });
+    }
+
     // Create enrollment with the correct schema structure
     const enrollment = await Enrollment.create({
       courses: [{

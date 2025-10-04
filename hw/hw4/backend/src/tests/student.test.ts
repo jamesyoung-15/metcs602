@@ -16,6 +16,7 @@ afterEach(async () => {
 
 // Test CRUD operations for Student API
 describe("Student API", () => {
+  // Create a new student
   it("should create a new student", async () => {
     const res = await request(app).post("/api/students").send({
       firstName: "James",
@@ -26,6 +27,7 @@ describe("Student API", () => {
     expect(res.body.firstName).toBe("James");
   });
 
+  // Get all students
   it("should fetch all students", async () => {
     await request(app).post("/api/students").send({
       firstName: "James",
@@ -37,6 +39,7 @@ describe("Student API", () => {
     expect(res.body.length).toBe(1);
   });
 
+  // Get a student by publicStudentId
   it("should fetch a student by ID", async () => {
     const student = await request(app).post("/api/students").send({
       firstName: "James",
@@ -49,6 +52,7 @@ describe("Student API", () => {
     expect(res.body.firstName).toBe("James");
   });
 
+  // Delete a student by publicStudentId
   it("should delete a student", async () => {
     const student = await request(app).post("/api/students").send({
       firstName: "James",
@@ -61,6 +65,25 @@ describe("Student API", () => {
     const fetchDeleted = await request(app).get(`/api/students/${studentId}`);
     expect(fetchDeleted.statusCode).toBe(404);
   });
+
+  // Update a student by publicStudentId
+  it("should update a student", async () => {
+    await request(app).post("/api/students").send({
+      firstName: "James",
+      lastName: "Young",
+      publicStudentId: "12345",
+    });
+    const studentId = "12345";
+    const res = await request(app).put(`/api/students/${studentId}`).send({
+      firstName: "Jimmy",
+      lastName: "Neutron",
+    });
+    expect(res.statusCode).toBe(200);
+    expect(res.body.firstName).toBe("Jimmy");
+    expect(res.body.lastName).toBe("Neutron");
+  });
+
+  // Prevent creating a student with duplicate publicStudentId
   it("should not create a student with duplicate publicStudentId", async () => {
     await request(app).post("/api/students").send({
       firstName: "James",

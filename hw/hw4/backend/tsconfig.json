@@ -2,11 +2,11 @@
   "compilerOptions": {
     "target": "ES6",
     "module": "nodenext",
-    "rootDir": "./src",
+    "rootDir": "src",
     "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "frontend"]
 }
