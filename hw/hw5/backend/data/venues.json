@@ -1,0 +1,188 @@
+[
+  {
+    "title": {
+      "en": "England vs Wales - Wembley London",
+      "it": "Inghilterra vs Galles - Wembley Londra",
+      "fr": "Angleterre vs Pays de Galles - Wembley Londres",
+      "es": "Inglaterra vs Gales - Wembley, Londress"
+    },
+    "slogan": {
+      "en": "The Three Lions will return to Wembley Stadium to face neighbours Wales!",
+      "it": "I Three Lions torneranno allo stadio di Wembley per affrontare i vicini del Galles!",
+      "fr": "Les Trois Lions reviendront au stade de Wembley pour affronter leurs voisins du Pays de Galles !",
+      "es": "¡Los Tres Leones regresarán al estadio de Wembley para enfrentarse a sus vecinos de Gales!"
+    },
+    "showcaseImage": "/data/wembley/wembly-showcase.webp",
+    "galleryImages": [
+      "/data/wembley/wembly-focused-1.webp",
+      "/data/wembley/wembly-focused-2.webp",
+      "/data/wembley/wembly-focused-3.webp",
+      "/data/wembley/wembly-focused-4.webp",
+      "/data/wembley/wembly-focused-5.webp",
+      "/data/wembley/wembly-focused-6.webp"
+    ],
+    "date": "2025-10-05T19:00:00Z",
+    "location": {
+      "city": "London",
+      "country": "United Kingdom",
+      "venue": "Wembley Stadium"
+    },
+    "ticketPrice": 89.00,
+    "availableTickets": 500
+  },
+  {
+    "title": {
+      "en": "Celtics vs. Cavaliers - TD Garden Boston",
+      "it": "Celtics vs. Cavaliers - TD Garden Boston",
+      "fr": "Celtics vs. Cavaliers - TD Garden Boston",
+      "es": "Celtics vs. Cavaliers - TD Garden Boston"
+    },
+    "slogan": {
+      "en": "Watch the preseason game live at TD Garden!",
+      "it": "Guarda la partita di preseason in diretta al TD Garden!",
+      "fr": "Regardez le match de pré-saison en direct au TD Garden!",
+      "es": "¡Mira el partido de pretemporada en vivo en TD Garden!"
+    },
+    "showcaseImage": "/data/td-garden/td-garden-showcase.webp",
+    "galleryImages": [
+      "/data/td-garden/td-garden-focused-1.webp",
+      "/data/td-garden/td-garden-focused-2.webp",
+      "/data/td-garden/td-garden-focused-3.webp",
+      "/data/td-garden/td-garden-focused-4.webp",
+      "/data/td-garden/td-garden-focused-5.webp",
+      "/data/td-garden/td-garden-focused-6.webp"
+    ],
+    "date": "2025-10-12T19:00:00Z",
+    "location": {
+      "city": "Boston",
+      "country": "USA",
+      "venue": "TD Garden"
+    },
+    "ticketPrice": 124.00,
+    "availableTickets": 350
+  },
+  {
+    "title": {
+      "en": "Dortmund vs. RB Leipzig - Signal Iduna Park Dortmund",
+      "it": "Dortmund vs. RB Leipzig - Signal Iduna Park Dortmund",
+      "fr": "Dortmund vs. RB Leipzig - Signal Iduna Park Dortmund",
+      "es": "Dortmund vs. RB Leipzig - Signal Iduna Park Dortmund"
+    },
+    "slogan": {
+      "en": "Watch Dortmuind take on Leipzig at Signal Iduna Park!",
+      "it": "Guarda il Dortmund affrontare il Lipsia al Signal Iduna Park!",
+      "fr": "Regardez Dortmund affronter Leipzig au Signal Iduna Park !",
+      "es": "¡Mira a Dortmund enfrentarse a Leipzig en el Signal Iduna Park!"
+    },
+    "showcaseImage": "/data/signal-iduna-park/signal-showcase.webp",
+    "galleryImages": [
+      "/data/signal-iduna-park/signal-focused-1.webp",
+      "/data/signal-iduna-park/signal-focused-2.webp",
+      "/data/signal-iduna-park/signal-focused-3.webp",
+      "/data/signal-iduna-park/signal-focused-4.webp",
+      "/data/signal-iduna-park/signal-focused-5.webp",
+      "/data/signal-iduna-park/signal-focused-6.webp"
+    ],
+    "date": "2025-10-04T13:00:00Z",
+    "location": {
+      "city": "Dortmund",
+      "country": "Germany",
+      "venue": "Signal Iduna Park"
+    },
+    "ticketPrice": 92.00,
+    "availableTickets": 600
+  },
+  {
+    "title": {
+      "en": "New England Revolution vs. Inter Miami - Gillette Stadium",
+      "it": "New England Revolution vs. Inter Miami - Gillette Stadium",
+      "fr": "New England Revolution vs. Inter Miami - Gillette Stadium",
+      "es": "New England Revolution vs. Inter Miami - Gillette Stadium"
+    },
+    "slogan": {
+      "en": "Watch New England Revolution take on Messi and Inter Miami!",
+      "it": "Guarda il New England Revolution affrontare Messi e l'Inter Miami!",
+      "fr": "Regardez le New England Revolution affronter Messi et l'Inter Miami!",
+      "es": "¡Mira al New England Revolution enfrentarse a Messi y al Inter Miami!"
+    },
+    "showcaseImage": "/data/gilette-stadium/gilette-showcase.webp",
+    "galleryImages": [
+      "/data/gilette-stadium/gilette-focused-1.webp",
+      "/data/gilette-stadium/gilette-focused-2.webp",
+      "/data/gilette-stadium/gilette-focused-3.webp",
+      "/data/gilette-stadium/gilette-focused-4.webp",
+      "/data/gilette-stadium/gilette-focused-5.webp",
+      "/data/gilette-stadium/gilette-focused-6.webp"
+    ],
+    "date": "2025-10-04T20:30:00Z",
+    "location": {
+      "city": "Foxborough",
+      "country": "USA",
+      "venue": "Gillette Stadium"
+    },
+    "ticketPrice": 80.00,
+    "availableTickets": 250
+  },
+  {
+    "title": {
+      "en": "FC Barcelona vs. Sevilla - Camp Nou Barcelona",
+      "it": "FC Barcelona vs. Sevilla - Camp Nou Barcellona",
+      "fr": "FC Barcelone vs. Séville - Camp Nou Barcelone",
+      "es": "FC Barcelona vs. Sevilla - Camp Nou Barcelona"
+    },
+    "slogan": {
+      "en": "Watch Lamine Yamal and co. take on Sevilla at Camp Nou!",
+      "it": "Guarda Lamine Yamal e soci affrontare il Siviglia al Camp Nou!",
+      "fr": "Regardez Lamine Yamal et ses coéquipiers affronter Séville au Camp Nou !",
+      "es": "¡Mira a Lamine Yamal y compañía enfrentarse al Sevilla en el Camp Nou!"
+    },
+    "showcaseImage": "/data/camp-nou/camp-nou-showcase.webp",
+    "galleryImages": [
+      "/data/camp-nou/camp-nou-focused-1.webp",
+      "/data/camp-nou/camp-nou-focused-2.webp",
+      "/data/camp-nou/camp-nou-focused-3.webp",
+      "/data/camp-nou/camp-nou-focused-4.webp",
+      "/data/camp-nou/camp-nou-focused-5.webp",
+      "/data/camp-nou/camp-nou-focused-6.webp"
+    ],
+    "date": "2025-10-05T10:15:00Z",
+    "location": {
+      "city": "Barcelona",
+      "country": "Spain",
+      "venue": "Camp Nou"
+    },
+    "ticketPrice": 115.00,
+    "availableTickets": 400
+  },
+  {
+    "title": {
+      "en": "Denver Nuggets vs. Raptors - Ball Arena Denver",
+      "it": "Denver Nuggets vs. Raptors - Ball Arena Denver",
+      "fr": "Denver Nuggets vs. Raptors - Ball Arena Denver",
+      "es": "Denver Nuggets vs. Raptors - Ball Arena Denver"
+    },
+    "slogan": {
+      "en": "Watch Denver Nuggets take on the Raptors!",
+      "it": "Guarda i Denver Nuggets affrontare i Raptors!",
+      "fr": "Regardez les Denver Nuggets affronter les Raptors !",
+      "es": "¡Mira a los Denver Nuggets enfrentarse a los Raptors!"
+    },
+    "showcaseImage": "/data/ball-arena/ball-arena-showcase.webp",
+    "galleryImages": [
+      "/data/ball-arena/ball-arena-focused-1.webp",
+      "/data/ball-arena/ball-arena-focused-2.webp",
+      "/data/ball-arena/ball-arena-focused-3.webp",
+      "/data/ball-arena/ball-arena-focused-4.webp",
+      "/data/ball-arena/ball-arena-focused-5.webp",
+      "/data/ball-arena/ball-arena-focused-6.webp"
+    ],
+    "date": "2025-10-04T22:00:00Z",
+    "location": {
+      "city": "Denver",
+      "country": "USA",
+      "venue": "Ball Arena"
+    },
+    "ticketPrice": 105.00,
+    "availableTickets": 700
+  }
+]

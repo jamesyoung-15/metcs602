@@ -50,7 +50,7 @@
 /* Forms and Inputs */
 input[type="text"],
 input[type="number"],
-input[type="email"],
+input[type="username"],
 select {
   width: 100%;
   padding: 8px;

@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Home",
+    "cart": "Carrello",
+    "profile": "Profilo",
+    "login": "Accedi",
+    "logout": "Esci"
+  },
+  "home": {
+    "title": "Eventi in Arrivo",
+    "buyTickets": "Acquista Biglietti"
+  },
+  "venue": {
+    "date": "Data",
+    "location": "Posizione",
+    "price": "Prezzo",
+    "available": "Disponibili",
+    "tickets": "biglietti",
+    "quantity": "Quantità",
+    "addToCart": "Aggiungi al Carrello",
+    "gallery": "Galleria"
+  },
+  "cart": {
+    "title": "Il Tuo Carrello",
+    "empty": "Il tuo carrello è vuoto",
+    "total": "Totale",
+    "remove": "Rimuovi",
+    "checkout": "Checkout"
+  },
+  "profile": {
+    "title": "Profilo",
+    "name": "Nome",
+    "username": "Nome Utente",
+    "language": "Lingua",
+    "changePassword": "Cambia Password",
+    "currentPassword": "Password Attuale",
+    "newPassword": "Nuova Password",
+    "uploadPicture": "Carica Immagine",
+    "save": "Salva"
+  },
+  "auth": {
+    "login": "Accedi",
+    "register": "Registrati",
+    "password": "Password",
+    "noAccount": "Non hai un account?",
+    "hasAccount": "Hai già un account?"
+  }
+}

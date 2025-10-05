@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "cart": "Panier",
+    "profile": "Profil",
+    "login": "Connexion",
+    "logout": "Déconnexion"
+  },
+  "home": {
+    "title": "Événements à Venir",
+    "buyTickets": "Acheter des Billets"
+  },
+  "venue": {
+    "date": "Date",
+    "location": "Emplacement",
+    "price": "Prix",
+    "available": "Disponible",
+    "tickets": "billets",
+    "quantity": "Quantité",
+    "addToCart": "Ajouter au Panier",
+    "gallery": "Galerie"
+  },
+  "cart": {
+    "title": "Votre Panier",
+    "empty": "Votre panier est vide",
+    "total": "Total",
+    "remove": "Supprimer",
+    "checkout": "Commander"
+  },
+  "profile": {
+    "title": "Profil",
+    "name": "Nom",
+    "username": "Nom D'Utilisateur",
+    "language": "Langue",
+    "changePassword": "Changer le Mot de Passe",
+    "currentPassword": "Mot de Passe Actuel",
+    "newPassword": "Nouveau Mot de Passe",
+    "uploadPicture": "Télécharger une Image",
+    "save": "Enregistrer"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "password": "Mot de Passe",
+    "noAccount": "Pas de compte?",
+    "hasAccount": "Vous avez déjà un compte?"
+  }
+}

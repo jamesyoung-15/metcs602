@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "cart": "Carrito",
+    "profile": "Perfil",
+    "login": "Iniciar Sesión",
+    "logout": "Cerrar Sesión"
+  },
+  "home": {
+    "title": "Próximos Eventos",
+    "buyTickets": "Comprar Entradas"
+  },
+  "venue": {
+    "date": "Fecha",
+    "location": "Ubicación",
+    "price": "Precio",
+    "available": "Disponible",
+    "tickets": "entradas",
+    "quantity": "Cantidad",
+    "addToCart": "Añadir al Carrito",
+    "gallery": "Galería"
+  },
+  "cart": {
+    "title": "Tu Carrito",
+    "empty": "Tu carrito está vacío",
+    "total": "Total",
+    "remove": "Eliminar",
+    "checkout": "Pagar"
+  },
+  "profile": {
+    "title": "Perfil",
+    "name": "Nombre",
+    "username": "Nombre de Usuario",
+    "language": "Idioma",
+    "changePassword": "Cambiar Contraseña",
+    "currentPassword": "Contraseña Actual",
+    "newPassword": "Nueva Contraseña",
+    "uploadPicture": "Subir Imagen",
+    "save": "Guardar"
+  },
+  "auth": {
+    "login": "Iniciar Sesión",
+    "register": "Registrarse",
+    "password": "Contraseña",
+    "noAccount": "¿No tienes cuenta?",
+    "hasAccount": "¿Ya tienes cuenta?"
+  }
+}
