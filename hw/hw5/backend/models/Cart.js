@@ -1,6 +1,18 @@
+/**
+ * @file Cart.js
+ * @description Mongoose model for the Cart collection, representing a user's shopping cart.
+ * @module models/Cart
+ */
+
 import mongoose from 'mongoose';
 
-// single cart item schema
+/**
+ * Schema for a single cart item.
+ * @typedef {Object} CartItem
+ * @property {mongoose.Schema.Types.ObjectId} venueId - The ID of the venue associated with the cart item.
+ * @property {number} quantity - The quantity of the item in the cart (minimum: 1).
+ * @property {number} price - The price of the item.
+ */
 const cartItemSchema = new mongoose.Schema({
   venueId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -18,6 +30,13 @@ const cartItemSchema = new mongoose.Schema({
   }
 });
 
+/**
+ * Schema for the Cart collection.
+ * @typedef {Object} Cart
+ * @property {mongoose.Schema.Types.ObjectId} userId - The ID of the user associated with the cart.
+ * @property {CartItem[]} items - An array of items in the cart.
+ * @property {Date} updatedAt - The timestamp of the last update to the cart.
+ */
 const cartSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -32,4 +51,7 @@ const cartSchema = new mongoose.Schema({
   }
 });
 
+/**
+ * Mongoose model for the Cart collection.
+ */
 export default mongoose.model('Cart', cartSchema);

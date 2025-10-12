@@ -5,6 +5,12 @@ import authRoutes from './routes/auth.js';
 import venueRoutes from './routes/venues.js';
 import cartRoutes from './routes/cart.js';
 import Cart from './models/Cart.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const expressPort = process.env.EXPRESS_PORT || 3049;
+const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/ticketmeister';
 
 // init express
 const app = express();
@@ -16,7 +22,7 @@ app.use('/uploads', express.static('uploads'));
 app.use('/data', express.static('data'));
 
 // connect to MongoDB, use different DB for tests
-mongoose.connect('mongodb://localhost:27017/ticketmeister')
+mongoose.connect(mongoURI)
     .then(() => console.log('MongoDB connected'))
     // clear cart on server start
     .then(() => Cart.deleteMany({}))
@@ -30,4 +36,4 @@ app.use('/api/auth', authRoutes);
 app.use('/api/venues', venueRoutes);
 app.use('/api/cart', cartRoutes);
 
-app.listen(3049, () => console.log('Backend running on port 3049'));
+app.listen(expressPort, () => console.log(`Backend running on port ${expressPort}`));

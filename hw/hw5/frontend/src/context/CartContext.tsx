@@ -30,6 +30,11 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
+/**
+ * CartProvider component to provide cart context.
+ * @param {ReactNode} children - Child components.
+ * @returns {JSX.Element} CartProvider component.
+ */
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const navigate = useNavigate();
   const [cart, setCart] = useState<Cart | null>(null);

@@ -1,5 +1,9 @@
 import LanguageSelector from "./LanguageSelector";
 
+/**
+ * Footer component for the application.
+ * @returns {JSX.Element} Footer component with language selector
+ */
 export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white p-4 text-sm sm:text-base">

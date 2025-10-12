@@ -1,6 +1,10 @@
 import { useCart } from '../context/CartContext';
 import { useTranslation } from 'react-i18next';
 
+/**
+ * Cart page to display cart items and total.
+ * @returns {JSX.Element} Cart page component.
+ */
 export default function Cart() {
   const { cart, updateQuantity, removeFromCart } = useCart();
   const { i18n, t } = useTranslation();

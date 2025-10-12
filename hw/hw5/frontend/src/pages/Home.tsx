@@ -3,6 +3,10 @@ import VenueCard from '../components/VenueCard';
 import { useTranslation } from 'react-i18next';
 import type { VenueItem } from '../components/VenueCard';
 
+/**
+ * Home page component that fetches and displays a list of venues.
+ * @returns {JSX.Element} Home page component with venue listings.
+ */
 export default function Home() {
   const [venues, setVenues] = useState<VenueItem[]>([]);
   const [loading, setLoading] = useState(true);

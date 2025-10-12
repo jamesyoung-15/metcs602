@@ -4,6 +4,10 @@ import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useTranslation } from 'react-i18next';
 
+/**
+ * Venue detail page.
+ * @returns {JSX.Element} Venue detail page.
+ */
 export default function VenueDetail() {
   const { id } = useParams();
   // too lazy to type this

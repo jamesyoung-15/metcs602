@@ -1,9 +1,24 @@
+/**
+ * @file auth_middleware.js
+ * @description Authentication Middleware module, checks for valid JWT tokens in request headers.
+ * @module authMiddleware
+ */
+
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 
-// lmao super secure
-const JWT_SECRET = 'my_super_secret_jwt_secret_key';
+dotenv.config();
 
-// Middleware to authenticate JWT tokens in requests
+const JWT_SECRET = process.env.JWT_SECRET;
+
+/** 
+ * Middleware to authenticate requests using JWT
+ * @param {Object} req - The request object, should contain an Authorization header with a Bearer token
+ * @param {Object} res - The response object, used to send a response back to the client
+ * @param {Function} next - The next middleware function, called if authentication is successful
+ * 
+ * @returns {void} - Calls next() if authentication is successful, or sends a 401 response if not
+ */
 export const authMiddleware = (req, res, next) => {
   try {
     // Expecting token in the format "Bearer <token>"

@@ -1,9 +1,20 @@
+/**
+ * @file venues.js
+ * @description Routes for managing venues, including retrieving, creating, and viewing individual venues.
+ * @module routes/venues
+ */
+
 import express from 'express';
 import Venue from '../models/Venue.js';
 
 const router = express.Router();
 
-// Get all venues
+/**
+ * Get all venues.
+ * @route GET /api/venues
+ * @param {express.Request} req - The request object.
+ * @param {express.Response} res - The response object containing a list of venues.
+ */
 router.get('/', async (req, res) => {
   try {
     const venues = await Venue.find().sort({ date: 1 });
@@ -13,7 +24,12 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Get single venue
+/**
+ * Get a single venue by ID.
+ * @route GET /api/venues/:id
+ * @param {express.Request} req - The request object containing the venue ID in the URL parameters.
+ * @param {express.Response} res - The response object containing the venue details.
+ */
 router.get('/:id', async (req, res) => {
   try {
     const venue = await Venue.findById(req.params.id);
@@ -26,7 +42,12 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Create venue (for testing/seeding)
+/**
+ * Create a new venue (for testing or seeding purposes).
+ * @route POST /api/venues
+ * @param {express.Request} req - The request object containing the venue details in the body.
+ * @param {express.Response} res - The response object containing the created venue.
+ */
 router.post('/', async (req, res) => {
   try {
     const venue = new Venue(req.body);

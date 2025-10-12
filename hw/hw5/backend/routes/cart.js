@@ -1,3 +1,9 @@
+/**
+ * @file cart.js
+ * @description Routes for managing the user's shopping cart.
+ * @module routes/cart
+ */
+
 import express from 'express';
 import Cart from '../models/Cart.js';
 import Venue from '../models/Venue.js';
@@ -5,7 +11,12 @@ import { authMiddleware } from '../middleware/auth_middleware.js';
 
 const router = express.Router();
 
-// Get cart
+/**
+ * Get the user's cart.
+ * @route GET /api/cart
+ * @param {express.Request} req - The request object with the user's JWT token.
+ * @param {express.Response} res - The response object containing the user's cart.
+ */
 router.get('/', authMiddleware, async (req, res) => {
   try {
     let cart = await Cart.findOne({ userId: req.userId }).populate('items.venueId');
@@ -19,7 +30,12 @@ router.get('/', authMiddleware, async (req, res) => {
   }
 });
 
-// Add to cart
+/**
+ * Add an item to the user's cart.
+ * @route POST /api/cart/add
+ * @param {express.Request} req - The request object containing the venue ID and quantity.
+ * @param {express.Response} res - The response object containing the updated cart.
+ */
 router.post('/add', authMiddleware, async (req, res) => {
   try {
     const { venueId, quantity } = req.body;
@@ -60,7 +76,12 @@ router.post('/add', authMiddleware, async (req, res) => {
   }
 });
 
-// Update cart item quantity
+/**
+ * Update the quantity of an item in the user's cart.
+ * @route PUT /api/cart/update/:venueId
+ * @param {express.Request} req - The request object containing the new quantity.
+ * @param {express.Response} res - The response object containing the updated cart.
+ */
 router.put('/update/:venueId', authMiddleware, async (req, res) => {
   try {
     const { quantity } = req.body;
@@ -91,7 +112,12 @@ router.put('/update/:venueId', authMiddleware, async (req, res) => {
   }
 });
 
-// Remove from cart
+/**
+ * Remove an item from the user's cart.
+ * @route DELETE /api/cart/remove/:venueId
+ * @param {express.Request} req - The request object with the venue ID to remove.
+ * @param {express.Response} res - The response object containing the updated cart.
+ */
 router.delete('/remove/:venueId', authMiddleware, async (req, res) => {
   try {
     const cart = await Cart.findOne({ userId: req.userId });
@@ -110,7 +136,12 @@ router.delete('/remove/:venueId', authMiddleware, async (req, res) => {
   }
 });
 
-// Clear cart
+/**
+ * Clear all items from the user's cart.
+ * @route DELETE /api/cart/clear
+ * @param {express.Request} req - The request object with the user's JWT token.
+ * @param {express.Response} res - The response object containing the cleared cart.
+ */
 router.delete('/clear', authMiddleware, async (req, res) => {
   try {
     const cart = await Cart.findOne({ userId: req.userId });

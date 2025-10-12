@@ -15,7 +15,11 @@ export interface VenueItem {
   ticketPrice: number;
 }
 
-// card to show for a venue with image, title, slogan, location, date, price, and buy button
+/**
+ * VenueCard component to display venue information.
+ * @param {VenueCardProps} props - Props containing venue data.
+ * @returns {JSX.Element} Venue card component.
+ */
 export default function VenueCard({ venue }: VenueCardProps) {
   const { i18n, t } = useTranslation();
   const lang = i18n.language;

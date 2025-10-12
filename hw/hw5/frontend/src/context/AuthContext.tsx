@@ -22,6 +22,11 @@ interface AuthContextType {
 // react context for user authentication
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+/**
+ * AuthProvider component to provide authentication context.
+ * @param {ReactNode} children - Child components.
+ * @returns {JSX.Element} AuthProvider component.
+ */
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [token, setToken] = useState<string | null>(localStorage.getItem('token'));

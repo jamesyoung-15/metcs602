@@ -3,7 +3,10 @@ import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import { useTranslation } from 'react-i18next';
 
-// simple navbar with links to home, cart, profile, login/logout
+/**
+ * Navbar component for the application.
+ * @returns {JSX.Element} Navbar component with links and user info
+ */
 export default function Navbar() {
   const { user, logout } = useAuth();
   const { cart } = useCart();

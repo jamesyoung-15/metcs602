@@ -3,6 +3,10 @@ import { useAuth } from '../context/AuthContext';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from '../components/LanguageSelector';
 
+/**
+ * Profile page for viewing and updating user profile.
+ * @returns {JSX.Element} Profile page.
+ */
 export default function Profile() {
   const { user, updateUser, token } = useAuth();
   const { t, i18n } = useTranslation();
