@@ -2,33 +2,6 @@
 
 Full stack ticketing platform that supports multiple languages.
 
-## Tech Stack
-
-### Frontend
-
-- React + Vite
-- React-router for routing and nav
-- TailwindCSS
-- react-i18next for multi-language
-
-Use React context for auth (eg. JWT token storage, user's default language) and cart (manages state and fetches items from mongo on login).
-
-### Backend
-
-- Node
-- Express
-- MongoDB
-- Others
-  - bcrypt for hashing
-  - JWT for auth
-  - multer for handling uploaded images
-  - Docker compose for quick setup of MongoDB
-  - Jest w/ Supertest for integration tests for API routes
-
-JWT tokens are generated on login/register and verified via middleware on protected routes
-
-User images are stored in `backend/uploads`, venue data and images in `data`, `generate_sample_data.js` populates mongodb with venue data.
-
 ## Setup Instructions
 
 ### Backend Setup
@@ -39,6 +12,7 @@ User images are stored in `backend/uploads`, venue data and images in `data`, `g
 ``` bash
 cd backend
 npm install
+# seed data
 npm run build
 # for jest tests
 npm run test
@@ -46,7 +20,7 @@ npm run test
 npm run start
 ```
 
-- Setup Frontend
+- Setup Frontend (React + Vite)
 
 ``` bash
 cd frontend
@@ -56,31 +30,91 @@ npm run dev
 
 Go to the port Vite tells in console, eg. `http://localhost:5173` in web browser.
 
+## Tech Stack
+
+### Frontend
+
+- React + Vite
+- React-router for routing and nav
+- TailwindCSS
+- react-i18next for multi-language
+- SocketIO-Client
+
+Use React context for auth (eg. JWT token storage, user's default language) and cart (manages state and fetches items from mongo on login). SocketIO for chatbox.
+
+### Backend
+
+- Node
+- Express
+- MongoDB
+- SocketIO
+- Others
+  - bcrypt for hashing
+  - JWT for auth
+  - multer for handling uploaded images
+  - Docker compose for quick setup of MongoDB
+  - Jest w/ Supertest for integration tests for API routes
+
+JWT tokens are generated on login/register and verified via middleware on protected routes
+
+User images are stored in `backend/uploads`, venue data and images in `data`, `generate_sample_data.js` populates mongodb with venue data. SocketIO for chatbox.
+
 ## Assignment Instructions
 
-The purpose of this application is to provide a cheaper way for venues to sell tickets around the globe.
+- The primary target is a mobile. DO not use the desktop as your primary display. (You can develop on it, but view/test on mobile).  This application is primarily meant for mobile.
+- Details on user accounts and each venue needs be fetch from a database (Maria, PostGres MySQL or Mongo).
 
-TicketMaster has a monopoly on ticket sales. They add costs and do not provide much value for their service. I would like to see a design and mobile-targeted web application that has the following requirements:
+Non Functional Requirements:
 
-- The primary target is a mobile. DO not use the desktop as your primary display. (You can develop on it, but view/test on mobile) This applicaton is primarily meant for mobile.
-- All images must be responsive to the viewport of the device (tablet, phone, lastly desktop
-- Each venue can be loaded from .json data file or from a database. Data to present for each venue is:
-- The first version of the website will be available in Italian, French, Spanish and English.
-- Please use Google translate or something else to create the translations.
-- The website should have navigation to any of the pages you are creating.
-- Create user account view. Has options for:
-  - Change password
-  - Add a picture
-  - Select a default language
+NFRD.1 The website has navigation (links) to any of the pages you are creating for this application.   Meaning, you cannot have any dead links or links that are broken.
 
-- Create at least 6 venues around the world, each on a different month, date & time. Have the following displayed for each venue:
-  - Venue Title
-  - Venue slogan or catchy title
-  - Must have 'showcase' picture - the primary picture
-  - Must have 6 focused pictures; like the arena, seats, people at prior venues.
-  - A call to action (button/icon/graphic) to purchase a ticket for that venue.
+NFRD.2  All images must be responsive to the device viewport (tablet, phone, lastly desktop)
 
-- A cart page to update the number of ticket to purchase and to remove the ticket purchase.
+NFRD.3 Feel free to add more tests to each Jest (or Cucumber) test suite, but you need to have meet the minimums per each suite.
+
+NFRD.4 The webapp must be a responsive design.
+
+NFRD.5 You can use React, Next or other frameworks as well as standard HTML, CSS and Javascript to create your webapp.
+
+
+Functional Requirements:
+
+FRD.1 Create a user account view. Has options (or sections/pages) for:
+
+    Changing password.  (You can opt to integrate with Google Sign-in if you want)
+    Mailing address.
+    Main contact phone number (home, mobile)
+
+FRD.3 Create at least 6 venues around the world, each on a different month, date & time, to start with.
+
+FRD.4 Have the following displayed for each venue:
+
+    Venue Title.
+    An image (your choice).
+    Venue slogan or title.
+    Must have 'showcase' picture - the primary picture.
+    Must have at least  6 small, tiled pictures that are tiled or carousel.   This can be random pictures to get through this requirement.
+    A call to action (button/icon/graphic) to purchase a ticket for that venue.
+
+FRD.5 A cart page to update the number of ticket to purchase and to remove the ticket purchase.
+
+FRD.6 Have a chat room for customers to chat about their purchase.
+
+FRD.7 Have at least 3 Jest or Cucumber test suites (account test suite, venue test suite and chat test suite). Each suite needs to have at least 2 Jest test cases each.
+
+Technical Requirements:
+
+a. Must use ES6 modules in your solution. Use of globals (functions, objects, classes, etc) is frowned upon and will receive a reduction in total points towards the grade.
+
+b. Must use sockets (Node or PHP based - up to you.)
+
+c. Must use a database to store and retrieve the information shown in the page.
+
+c. Must use JSDoc with your comments and documentation in your code.
+
+d. Include a README.md file if installation or seeding.
+
+e. Must have Jest or Cucumber tests.
 
 ## Resources Used
 

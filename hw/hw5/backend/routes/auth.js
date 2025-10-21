@@ -120,10 +120,10 @@ router.get('/profile', authMiddleware, async (req, res) => {
  */
 router.put('/profile', authMiddleware, async (req, res) => {
   try {
-    const { name, defaultLanguage } = req.body;
+    const { name, defaultLanguage, phoneNumber, mailAddress } = req.body;
     const user = await User.findByIdAndUpdate(
       req.userId,
-      { name, defaultLanguage },
+      { name, defaultLanguage, phoneNumber, mailAddress },
       { new: true }
     ).select('-password');
     res.json(user);

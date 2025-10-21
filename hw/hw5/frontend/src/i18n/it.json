@@ -36,7 +36,12 @@
     "currentPassword": "Password Attuale",
     "newPassword": "Nuova Password",
     "uploadPicture": "Carica Immagine",
-    "save": "Salva"
+    "save": "Salva",
+    "logout": "Esci",
+    "phoneNumber": "Numero di Telefono",
+    "mailAddress": "Indirizzo Postale",
+    "info": "Profilo Attuale",
+    "changeInfo": "Cambia Informazioni del Profilo"
   },
   "auth": {
     "login": "Accedi",

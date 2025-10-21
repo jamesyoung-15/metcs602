@@ -1,7 +1,7 @@
-import type { ReactNode } from 'react';
-import { createContext, useContext, useState, useEffect } from 'react';
-import { useAuth } from './AuthContext';
-import { useNavigate } from 'react-router-dom';
+import type { ReactNode } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import { useAuth } from "./AuthContext";
+import { useNavigate } from "react-router-dom";
 
 interface CartItem {
   _id: string;
@@ -44,19 +44,19 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     if (token) fetchCart();
     // prevent navigating to cart if not logged in, not really a implemented correctly but wtv
     else {
-      navigate('/');
+      navigate("/");
     }
   }, [token]);
 
   // fetch cart from backend
   const fetchCart = async () => {
     try {
-      const res = await fetch('http://localhost:3049/api/cart', {
-        headers: { 'Authorization': `Bearer ${token}` }
+      const res = await fetch("http://localhost:3049/api/cart", {
+        headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) {
-        alert('Error fetching cart');
-        console.error('Failed to fetch cart');
+        alert("Error fetching cart");
+        console.error("Failed to fetch cart");
         return;
       }
       const data = await res.json();
@@ -67,17 +67,17 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const addToCart = async (venueId: string, quantity: number) => {
-    const res = await fetch('http://localhost:3049/api/cart/add', {
-      method: 'POST',
+    const res = await fetch("http://localhost:3049/api/cart/add", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({ venueId, quantity })
+      body: JSON.stringify({ venueId, quantity }),
     });
     if (!res.ok) {
-      alert('Error adding to cart');
-      console.error('Failed to add to cart');
+      alert("Error adding to cart");
+      console.error("Failed to add to cart");
       return;
     }
     const data = await res.json();
@@ -85,17 +85,20 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const updateQuantity = async (venueId: string, quantity: number) => {
-    const res = await fetch(`http://localhost:3049/api/cart/update/${venueId}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+    const res = await fetch(
+      `http://localhost:3049/api/cart/update/${venueId}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ quantity }),
       },
-      body: JSON.stringify({ quantity })
-    });
+    );
     if (!res.ok) {
-      alert('Error updating quantity');
-      console.error('Failed to update quantity');
+      alert("Error updating quantity");
+      console.error("Failed to update quantity");
       return;
     }
     const data = await res.json();
@@ -103,13 +106,16 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const removeFromCart = async (venueId: string) => {
-    const res = await fetch(`http://localhost:3049/api/cart/remove/${venueId}`, {
-      method: 'DELETE',
-      headers: { 'Authorization': `Bearer ${token}` }
-    });
+    const res = await fetch(
+      `http://localhost:3049/api/cart/remove/${venueId}`,
+      {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      },
+    );
     if (!res.ok) {
-      alert('Error removing from cart');
-      console.error('Failed to remove from cart');
+      alert("Error removing from cart");
+      console.error("Failed to remove from cart");
       return;
     }
     const data = await res.json();
@@ -118,7 +124,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   // provide cart state and functions to manipulate it
   return (
-    <CartContext.Provider value={{ cart, addToCart, updateQuantity, removeFromCart, fetchCart }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, updateQuantity, removeFromCart, fetchCart }}
+    >
       {children}
     </CartContext.Provider>
   );
@@ -128,6 +136,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 // eslint-disable-next-line react-refresh/only-export-components
 export const useCart = () => {
   const context = useContext(CartContext);
-  if (!context) throw new Error('useCart must be used within CartProvider');
+  if (!context) throw new Error("useCart must be used within CartProvider");
   return context;
 };

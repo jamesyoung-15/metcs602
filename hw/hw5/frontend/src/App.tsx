@@ -1,15 +1,15 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
-import { CartProvider } from './context/CartContext';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import VenueDetail from './pages/VenueDetail';
-import Cart from './pages/Cart';
-import Profile from './pages/Profile';
-import Login from './pages/Login';
-import './i18n/i18n';
-import './App.css';
-import Footer from './components/Footer';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+import { CartProvider } from "./context/CartContext";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import VenueDetail from "./pages/VenueDetail";
+import Cart from "./pages/Cart";
+import Profile from "./pages/Profile";
+import Login from "./pages/Login";
+import "./i18n/i18n";
+import "./App.css";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (

@@ -36,7 +36,12 @@
     "currentPassword": "Contraseña Actual",
     "newPassword": "Nueva Contraseña",
     "uploadPicture": "Subir Imagen",
-    "save": "Guardar"
+    "save": "Guardar",
+    "logout": "Cerrar Sesión",
+    "phoneNumber": "Número de Teléfono",
+    "mailAddress": "Dirección Postal",
+    "info": "Perfil Actual",
+    "changeInfo": "Cambiar Información del Perfil"
   },
   "auth": {
     "login": "Iniciar Sesión",

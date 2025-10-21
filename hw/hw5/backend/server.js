@@ -6,6 +6,8 @@ import venueRoutes from './routes/venues.js';
 import cartRoutes from './routes/cart.js';
 import Cart from './models/Cart.js';
 import dotenv from 'dotenv';
+import http from 'http';
+import { Server } from 'socket.io';
 
 dotenv.config();
 
@@ -14,6 +16,14 @@ const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/ticketmeist
 
 // init express
 const app = express();
+
+// init socket.io
+const socketServer = http.createServer(app);
+const io = new Server(socketServer, {
+    cors: {
+        origin: '*',
+    }
+});
 
 // middleware
 app.use(cors());
@@ -36,4 +46,20 @@ app.use('/api/auth', authRoutes);
 app.use('/api/venues', venueRoutes);
 app.use('/api/cart', cartRoutes);
 
-app.listen(expressPort, () => console.log(`Backend running on port ${expressPort}`));
+// socket.io
+io.on('connection', (socket) => {
+    console.log('a user connected', socket.id);
+
+    socket.on('chat message', (msg) => {
+        io.emit('chat message', msg);
+    });
+
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+    });
+});
+
+// app.listen(expressPort, () => console.log(`Backend running on port ${expressPort}`));
+socketServer.listen(expressPort, () => {
+    console.log(`Backend running on port ${expressPort}`);
+});

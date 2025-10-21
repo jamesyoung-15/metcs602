@@ -36,7 +36,12 @@
     "currentPassword": "Current Password",
     "newPassword": "New Password",
     "uploadPicture": "Upload Picture",
-    "save": "Save"
+    "save": "Save",
+    "logout": "Logout",
+    "phoneNumber": "Phone Number",
+    "mailAddress": "Mailing Address",
+    "info": "Current Profile",
+    "changeInfo": "Change Profile Info"
   },
   "auth": {
     "login": "Login",

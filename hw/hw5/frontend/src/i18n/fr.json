@@ -36,7 +36,12 @@
     "currentPassword": "Mot de Passe Actuel",
     "newPassword": "Nouveau Mot de Passe",
     "uploadPicture": "Télécharger une Image",
-    "save": "Enregistrer"
+    "save": "Enregistrer",
+    "logout": "Déconnexion",
+    "phoneNumber": "Numéro de Téléphone",
+    "mailAddress": "Adresse Postale",
+    "info": "Profil Actuel",
+    "changeInfo": "Changer les Informations du Profil"
   },
   "auth": {
     "login": "Connexion",

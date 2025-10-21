@@ -13,6 +13,8 @@ import bcrypt from 'bcrypt';
  * @property {string} username - The unique username of the user, stored in lowercase.
  * @property {string} password - The hashed password of the user.
  * @property {string} name - The full name of the user.
+ * @property {string} phoneNumber - The user's phone number.
+ * @property {string} mailAddress - The user's mailing address.
  * @property {string} profilePicture - The URL of the user's profile picture.
  * @property {string} defaultLanguage - The default language of the user, one of ['en', 'it', 'fr', 'es'].
  * @property {Date} createdAt - The timestamp when the user account was created.
@@ -40,6 +42,14 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ['en', 'it', 'fr', 'es'],
     default: 'en'
+  },
+  phoneNumber: {
+    type: String,
+    default: ''
+  },
+  mailAddress: {
+    type: String,
+    default: ''
   },
   createdAt: {
     type: Date,

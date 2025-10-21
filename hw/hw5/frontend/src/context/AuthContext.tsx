@@ -1,6 +1,6 @@
-import { createContext, useContext, useState, useEffect } from 'react';
-import type { ReactNode } from 'react';
-import { useTranslation } from 'react-i18next';
+import { createContext, useContext, useState, useEffect } from "react";
+import type { ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 
 interface User {
   id: string;
@@ -8,6 +8,8 @@ interface User {
   name: string;
   profilePicture: string;
   defaultLanguage: string;
+  phoneNumber?: string;
+  mailAddress?: string;
 }
 
 interface AuthContextType {
@@ -29,15 +31,17 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
  */
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
+  const [token, setToken] = useState<string | null>(
+    localStorage.getItem("token"),
+  );
   const { i18n } = useTranslation();
 
   // if user logged in and has a default language, set it
   useEffect(() => {
     if (user?.defaultLanguage) {
-      console.log('Setting language to', user.defaultLanguage);
+      console.log("Setting language to", user.defaultLanguage);
       i18n.changeLanguage(user.defaultLanguage);
-      localStorage.setItem('language', user.defaultLanguage);
+      localStorage.setItem("language", user.defaultLanguage);
     }
   }, [user?.defaultLanguage]);
 
@@ -51,11 +55,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   // fetch user profile from backend
   const fetchProfile = async () => {
     try {
-      const res = await fetch('http://localhost:3049/api/auth/profile', {
-        headers: { 'Authorization': `Bearer ${token}` }
+      const res = await fetch("http://localhost:3049/api/auth/profile", {
+        headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) {
-        console.error('Failed to fetch profile');
+        console.error("Failed to fetch profile");
         return;
       }
       const data = await res.json();
@@ -68,45 +72,45 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   // login user and store token in local storage
   const login = async (username: string, password: string) => {
-    const res = await fetch('http://localhost:3049/api/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password })
+    const res = await fetch("http://localhost:3049/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
     });
     if (!res.ok) {
-      alert('Login failed');
+      alert("Login failed");
       console.error(await res.text());
       return;
     }
     const data = await res.json();
     setToken(data.token);
     setUser(data.user);
-    localStorage.setItem('token', data.token);
+    localStorage.setItem("token", data.token);
   };
 
   // register user and store token in local storage
   const register = async (username: string, password: string, name: string) => {
-    const res = await fetch('http://localhost:3049/api/auth/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password, name })
+    const res = await fetch("http://localhost:3049/api/auth/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password, name }),
     });
     if (!res.ok) {
-      alert('Registration failed');
+      alert("Registration failed");
       console.error(await res.text());
       return;
     }
     const data = await res.json();
     setToken(data.token);
     setUser(data.user);
-    localStorage.setItem('token', data.token);
+    localStorage.setItem("token", data.token);
   };
 
   // logout user and clear token from local storage
   const logout = () => {
     setUser(null);
     setToken(null);
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
   };
 
   // update user info in context
@@ -115,7 +119,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, token, login, register, logout, updateUser }}>
+    <AuthContext.Provider
+      value={{ user, token, login, register, logout, updateUser }}
+    >
       {children}
     </AuthContext.Provider>
   );
@@ -124,6 +130,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 // eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => {
   const context = useContext(AuthContext);
-  if (!context) throw new Error('useAuth must be used within AuthProvider');
+  if (!context) throw new Error("useAuth must be used within AuthProvider");
   return context;
 };
