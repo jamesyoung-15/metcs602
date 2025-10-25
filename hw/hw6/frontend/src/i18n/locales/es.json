@@ -1,0 +1,74 @@
+{
+"welcome": "Bienvenido",
+"submit": "Enviar",
+"welcomeMessage": [
+"Esto es lo que debemos hacer hoy:",
+"Verificar su identidad",
+"Revisar su información",
+"Firmar el formulario de consentimiento",
+"Realizar un pago"
+],
+"checkIn": "Registrarse",
+"steps": {
+"step1": "Verificar su identidad",
+"step2": "Revisar su información",
+"step3": "Firmar el formulario de consentimiento",
+"step4": "Realizar el pago"
+},
+"intakeForm": {
+"title": "Formulario de Admisión del Paciente",
+"firstName": "Nombre",
+"middleName": "Segundo Nombre",
+"lastName": "Apellido",
+"mobileNumber": "Número de teléfono móvil",
+"email": "Correo electrónico",
+"address": "Dirección postal"
+},
+"healthForm": {
+"title": "Formulario de Información de Salud",
+"questions": [
+"¿Tenía canas antes de tener hijos? [Sí/No]",
+"¿Alguna vez se ha roto un hueso después de los 16 años? [Sí/No]",
+"¿Se tropieza con piedras pequeñas al caminar? [Sí/No]"
+],
+"yes": "Sí",
+"no": "No",
+"selectOption": "Seleccione una opción"
+},
+"insuranceForm": {
+"title": "Detalles del Seguro",
+"carrier": "Compañía de seguros actual (Nombre)",
+"policyNumber": "Número de póliza"
+},
+"uploadCard": {
+"title": "Subir Tarjeta de Seguro",
+"instruction": "Por favor, suba una imagen clara del anverso de su tarjeta de seguro. Los formatos aceptados son JPG, PNG y PDF."
+},
+"scheduleAppointment": {
+"title": "Citas disponibles",
+"viewCalendar": "Ver calendario",
+"days": "Días",
+"avalDays": "Dom - Sáb",
+"hours": "Horas",
+"morning": "Mañana",
+"afternoon": "Tarde",
+"evening": "Noche",
+"changeSearch": "Cambiar parámetros de búsqueda",
+"confirmAppointment": "Confirmar cita"
+},
+"alerts": {
+"completeAllQuestions": "Por favor, responda todas las preguntas de salud antes de enviar el formulario.",
+"error": "Ocurrió un error. Por favor, inténtelo de nuevo.",
+"formSubmissionError": "Hubo un error al enviar el formulario. Por favor, inténtelo de nuevo.",
+"formSubmitted": "Formulario enviado correctamente.",
+"appointmentConfirmed": "Su cita ha sido confirmada." 
+},
+"termsOfService": {
+"title": "Términos y condiciones",
+"content": "Los Términos de Servicio, también conocidos como Términos de Uso y Términos y Condiciones, son los acuerdos legales entre los proveedores de servicios y los consumidores de los mismos. La persona debe aceptar cumplir con los términos de servicio para poder utilizar el servicio ofrecido. Los términos de servicio también pueden ser simplemente una cláusula de exención de responsabilidad, especialmente en lo que respecta al uso de sitios web. El lenguaje vago y las oraciones extensas utilizadas en estos términos de servicio han generado preocupaciones sobre la privacidad del cliente y han aumentado la concienciación pública de diversas maneras. Un acuerdo de Términos de Servicio se utiliza principalmente con fines legales por empresas que proporcionan software o servicios, como navegadores web, comercio electrónico, motores de búsqueda web, redes sociales y servicios de transporte. Un acuerdo de Términos de Servicio legítimo es legalmente vinculante y puede estar sujeto a cambios.[1] Las empresas pueden hacer cumplir los términos negándose a prestar el servicio. Los clientes pueden hacerlos cumplir presentando una demanda o un caso de arbitraje si pueden demostrar que fueron perjudicados por un incumplimiento de los términos. Existe un mayor riesgo de que los datos se extravíen durante los cambios corporativos, incluidas fusiones, desinversiones, adquisiciones, reducciones de personal, etc., cuando los datos pueden transferirse de forma incorrecta.[2]",
+"agree": "Acepto los Términos y Condiciones",
+"thankYou": "Gracias por aceptar los Términos de Servicio.",
+"mustAgree": "Debe aceptar los términos de servicio para continuar.",
+"error": "Hubo un error al procesar su aceptación. Por favor, inténtelo de nuevo."
+}
+}

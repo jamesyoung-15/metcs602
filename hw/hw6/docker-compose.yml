@@ -1,0 +1,30 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo-data:/data/db
+  nodejs-backend:
+    build: ./backend
+    container_name: nodejs-backend
+    ports:
+      - "3055:3055"
+    depends_on:
+      - mongodb
+    volumes:
+      - ./backend/uploads:/app/uploads
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/patient-intaker
+    # seed database before starting the server (problem: this runs every time the container starts)
+    command: sh -c "npm run build && npm run start"
+  react-frontend:
+    build: ./frontend
+    container_name: react-frontend
+    ports:
+      - "3056:3056"
+    depends_on:
+      - nodejs-backend
+    environment:
+      - VITE_API_URL=http://localhost:3055

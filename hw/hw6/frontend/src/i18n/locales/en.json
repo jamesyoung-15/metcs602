@@ -1,0 +1,74 @@
+{
+  "welcome": "Welcome",
+  "submit": "Submit",
+  "welcomeMessage": [
+    "Here's what we need to do today:",
+    "Verify who you are",
+    "Review your information",
+    "Sign consent form",
+    "Make a payment"
+  ],
+  "checkIn": "Check In",
+  "steps": {
+    "step1": "Verify who you are",
+    "step2": "Review your information",
+    "step3": "Sign consent form",
+    "step4": "Make payment"
+  },
+  "intakeForm": {
+    "title": "Patient Intake Form",
+    "firstName": "First Name",
+    "middleName": "Middle Name",
+    "lastName": "Last Name",
+    "mobileNumber": "Mobile Number",
+    "email": "Email Address",
+    "address": "Mailing Address"
+  },
+  "healthForm": {
+    "title": "Health Information Form",
+    "questions": [
+      "Did you have gray hair before having children? [Yes/No]",
+      "Have you ever broken a bone after 16 years old? [Yes/No]",
+      "Do you trip over small stones while walking? [Yes/No]"
+    ],
+    "yes": "Yes",
+    "no": "No",
+    "selectOption": "Select an option"
+  },
+  "insuranceForm": {
+    "title": "Insurance Details",
+    "carrier": "Current Insurance Carrier (Name)",
+    "policyNumber": "Policy Number"
+  },
+  "uploadCard": {
+    "title": "Upload Insurance Card",
+    "instruction": "Please upload a clear image of the front your insurance card. Accepted formats are JPG, PNG, and PDF."
+  },
+  "scheduleAppointment": {
+    "title": "Available appointments",
+    "viewCalendar": "View calendar",
+    "days": "Days",
+    "avalDays": "Sun - Sat",
+    "hours": "Hours",
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "evening": "Evening",
+    "changeSearch": "Change search parameters",
+    "confirmAppointment": "Confirm Appointment"
+  },
+  "alerts": {
+    "completeAllQuestions": "Please answer all health questions before submitting.",
+    "error": "An error occurred. Please try again.",
+    "formSubmissionError": "There was an error submitting the form. Please try again.",
+    "formSubmitted": "Form submitted successfully.",
+    "appointmentConfirmed": "Your appointment has been confirmed."
+  },
+  "termsOfService": {
+    "title": "Terms and Conditions",
+    "content": "Terms of Service, also known as Terms of Use and Terms and Conditions, are the legal agreements between service providers and the service consumers. The person must agree to abide by the terms of service in order to use the offered service. Terms of service can also be merely a disclaimer, especially regarding the use of websites. Vague language and lengthy sentences used in these terms of service have caused concerns about customer privacy and raised public awareness in many ways. A Terms of Service agreement is mainly used for legal purposes by companies which provide software or services, such as web browsers, e-commerce, web search engines, social media, and transport services. A legitimate Terms of Service agreement is legally binding and may be subject to change.[1] Companies can enforce the terms by refusing service. Customers can enforce by filing a lawsuit or arbitration case if they can show they were actually harmed by a breach of the terms. There is a heightened risk of data going astray during corporate changes, including mergers, divestitures, buyouts, downsizing, etc., when data can be transferred improperly.[2]",
+    "agree": "I agree to the Terms and Conditions",
+    "thankYou": "Thank you for agreeing to the Terms of Service.",
+    "mustAgree": "You must agree to the terms of service to proceed.",
+    "error": "There was an error processing your agreement. Please try again."
+  }
+}
