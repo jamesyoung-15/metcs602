@@ -8,11 +8,7 @@ import Cart from './models/Cart.js';
 import dotenv from 'dotenv';
 import http from 'http';
 import { Server } from 'socket.io';
-
-dotenv.config();
-
-const expressPort = process.env.EXPRESS_PORT || 3049;
-const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/ticketmeister';
+import config from './config/index.js';
 
 // init express
 const app = express();
@@ -26,13 +22,15 @@ const io = new Server(socketServer, {
 });
 
 // middleware
-app.use(cors());
+app.use(cors({
+    origin: '*',
+}));
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 app.use('/data', express.static('data'));
 
 // connect to MongoDB, use different DB for tests
-mongoose.connect(mongoURI)
+mongoose.connect(config.dbUri)
     .then(() => console.log('MongoDB connected'))
     // clear cart on server start
     .then(() => Cart.deleteMany({}))
@@ -60,6 +58,6 @@ io.on('connection', (socket) => {
 });
 
 // app.listen(expressPort, () => console.log(`Backend running on port ${expressPort}`));
-socketServer.listen(expressPort, () => {
-    console.log(`Backend running on port ${expressPort}`);
+socketServer.listen(config.port, () => {
+    console.log(`Backend running on port ${config.port}`);
 });

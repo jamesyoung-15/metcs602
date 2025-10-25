@@ -23,7 +23,7 @@ export default function VenueDetail() {
 
   // fetch venue details from backend on component mount
   useEffect(() => {
-    fetch(`http://localhost:3049/api/venues/${id}`)
+    fetch(`${import.meta.env.VITE_NODE_URL}/api/venues/${id}`)
       .then((res) => res.json())
       .then((data) => setVenue(data));
   }, [id]);
@@ -42,7 +42,7 @@ export default function VenueDetail() {
   return (
     <div className="max-w-4xl mx-auto p-4">
       <img
-        src={`http://localhost:3049${venue.showcaseImage}`}
+        src={`${import.meta.env.VITE_NODE_URL}${venue.showcaseImage}`}
         alt={venue.title[lang]}
         className="w-full h-64 md:h-96 object-cover rounded-lg mb-6"
       />
@@ -105,7 +105,7 @@ export default function VenueDetail() {
         {venue.galleryImages.map((img: string, i: number) => (
           <img
             key={i}
-            src={`http://localhost:3049${img}`}
+            src={`${import.meta.env.VITE_NODE_URL}${img}`}
             alt={`Gallery ${i + 1}`}
             className="w-full h-40 object-cover rounded"
           />

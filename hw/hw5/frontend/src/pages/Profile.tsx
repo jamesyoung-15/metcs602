@@ -18,7 +18,7 @@ export default function Profile() {
   const [file, setFile] = useState<File | null>(null);
 
   const handleUpdateProfile = async () => {
-    const res = await fetch("http://localhost:3049/api/auth/profile", {
+    const res = await fetch(`${import.meta.env.VITE_NODE_URL}/api/auth/profile`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export default function Profile() {
   };
 
   const handleChangePassword = async () => {
-    const res = await fetch("http://localhost:3049/api/auth/change-password", {
+    const res = await fetch(`${import.meta.env.VITE_NODE_URL}/api/auth/change-password`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -62,7 +62,7 @@ export default function Profile() {
     if (!file) return;
     const formData = new FormData();
     formData.append("picture", file);
-    const res = await fetch("http://localhost:3049/api/auth/upload-picture", {
+    const res = await fetch(`${import.meta.env.VITE_NODE_URL}/api/auth/upload-picture`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -106,7 +106,7 @@ export default function Profile() {
         <h2 className="text-xl font-bold mb-4">{t("profile.changeInfo")}</h2>
         {user.profilePicture && (
           <img
-            src={`http://localhost:3049${user.profilePicture}`}
+            src={`${import.meta.env.VITE_NODE_URL}${user.profilePicture}`}
             alt="Profile"
             className="w-24 h-24 rounded-full mb-4 object-cover"
           />

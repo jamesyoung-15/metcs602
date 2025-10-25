@@ -4,9 +4,21 @@ Full stack ticketing platform that supports multiple languages.
 
 ## Setup Instructions
 
+### Docker Compose (Fastest)
+
+Quickest setup would be to use Docker compose that spins up MongoDB, Node backend, and React frontend containers, eg:
+
+``` bash
+docker compose up -d
+```
+
+Then go to `http://localhost:3048` to see web application.
+
+For local setup, see below:
+
 ### Backend Setup
 
-- Make sure MongoDB is running on port 20717, either use locally installed or docker compose, eg. `docker compose up -d`
+- !!Important!! Make sure MongoDB is running on port 20717 (accessible with no user/password for dev), either use locally installed or docker, eg. `docker compose up mongodb -d`.
 - Setup backend
 
 ``` bash
@@ -28,7 +40,7 @@ npm install
 npm run dev
 ```
 
-Go to the port Vite tells in console, eg. `http://localhost:5173` in web browser.
+Go to the port Vite tells in console, eg. `http://localhost:3048` in web browser.
 
 ## Tech Stack
 

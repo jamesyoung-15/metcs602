@@ -30,7 +30,7 @@ export default function VenueCard({ venue }: VenueCardProps) {
       className="block bg-white rounded-lg shadow overflow-hidden"
     >
       <img
-        src={`http://localhost:3049${venue.showcaseImage}`}
+        src={`${import.meta.env.VITE_NODE_URL}${venue.showcaseImage}`}
         alt={venue.title[lang]}
         className="w-full h-48 object-cover"
       />

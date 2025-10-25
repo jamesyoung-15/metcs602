@@ -55,7 +55,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   // fetch user profile from backend
   const fetchProfile = async () => {
     try {
-      const res = await fetch("http://localhost:3049/api/auth/profile", {
+      const res = await fetch(`${import.meta.env.VITE_NODE_URL}/api/auth/profile`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) {
@@ -72,7 +72,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   // login user and store token in local storage
   const login = async (username: string, password: string) => {
-    const res = await fetch("http://localhost:3049/api/auth/login", {
+    const res = await fetch(`${import.meta.env.VITE_NODE_URL}/api/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -90,13 +90,13 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   // register user and store token in local storage
   const register = async (username: string, password: string, name: string) => {
-    const res = await fetch("http://localhost:3049/api/auth/register", {
+    const res = await fetch(`${import.meta.env.VITE_NODE_URL}/api/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password, name }),
     });
     if (!res.ok) {
-      alert("Registration failed");
+      alert("Registration failed, try a different username");
       console.error(await res.text());
       return;
     }

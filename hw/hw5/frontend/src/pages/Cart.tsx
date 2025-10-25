@@ -34,7 +34,7 @@ export default function Cart() {
         <div key={item._id} className="bg-white rounded-lg shadow p-4 mb-4">
           <div className="flex flex-col sm:flex-row gap-4">
             <img
-              src={`http://localhost:3049${item.venueId.showcaseImage}`}
+              src={`${import.meta.env.VITE_NODE_URL}${item.venueId.showcaseImage}`}
               alt={"Venue"}
               className="w-24 h-24 object-cover rounded"
             />

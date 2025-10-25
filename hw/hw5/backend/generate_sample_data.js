@@ -2,13 +2,10 @@ import mongoose from 'mongoose';
 import Venue from './models/Venue.js';
 import venuesData from './data/venues.json' with { type: 'json' };
 import dotenv from 'dotenv';
-
-dotenv.config();
-
-const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/ticketmeister';
+import config from './config/index.js';
 
 // connect to mongoDB, insert sample venues from venues.json to create sample data
-mongoose.connect(mongoURI)
+mongoose.connect(config.dbUri)
   .then(async () => {
     console.log('MongoDB connected');
     

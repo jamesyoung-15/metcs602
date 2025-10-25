@@ -6,10 +6,7 @@
 
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-
-dotenv.config();
-
-const JWT_SECRET = process.env.JWT_SECRET;
+import config from '../config/index.js';
 
 /** 
  * Middleware to authenticate requests using JWT
@@ -30,7 +27,7 @@ export const authMiddleware = (req, res, next) => {
     }
 
     // Verify the token and extract user information
-    const decoded = jwt.verify(token, JWT_SECRET);
+    const decoded = jwt.verify(token, config.jwtSecret);
     req.userId = decoded.userId; // attach userId for routes to use
     next();
   } catch (error) {

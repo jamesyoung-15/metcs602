@@ -6,3 +6,23 @@ services:
       - "27017:27017"
     volumes:
       - ./mongo-data:/data/db
+  nodejs-backend:
+    build: ./backend
+    container_name: nodejs-backend
+    ports:
+      - "3049:3049"
+    depends_on:
+      - mongodb
+    volumes:
+      - ./backend/uploads:/app/uploads
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/ticketmeister
+    # seed database before starting the server (problem: this runs every time the container starts)
+    command: sh -c "npm run build && npm run start"
+  react-frontend:
+    build: ./frontend
+    container_name: react-frontend
+    ports:
+      - "3048:3048"
+    depends_on:
+      - nodejs-backend

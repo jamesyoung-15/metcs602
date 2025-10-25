@@ -27,7 +27,7 @@ export default function Chat( { username } : { username: string | undefined } ) 
 
   // setup socket connection
   useEffect(() => {
-    socketRef.current = io("http://localhost:3049", {
+    socketRef.current = io(import.meta.env.VITE_NODE_URL, {
       transports: ["websocket"],
     });
 
@@ -66,7 +66,7 @@ export default function Chat( { username } : { username: string | undefined } ) 
     <div className="fixed bottom-4 left-4 z-50">
       {/* Chat panel */}
       <div
-        className={`flex flex-col bg-white shadow-lg border rounded-lg transition-transform duration-200 ${
+        className={`flex flex-col bg-blue-400 shadow-lg border rounded-lg transition-transform duration-200 ${
           open ? "w-60 md:w-80 max-h-[36rem]" : "w-12 h-12"
         } overflow-hidden`}
       >

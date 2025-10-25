@@ -18,7 +18,7 @@ export default function Home() {
     const fetchVenues = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://localhost:3049/api/venues");
+        const response = await fetch(`${import.meta.env.VITE_NODE_URL}/api/venues`);
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

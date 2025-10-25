@@ -51,7 +51,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   // fetch cart from backend
   const fetchCart = async () => {
     try {
-      const res = await fetch("http://localhost:3049/api/cart", {
+      const res = await fetch(`${import.meta.env.VITE_NODE_URL}/api/cart`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) {
@@ -67,7 +67,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const addToCart = async (venueId: string, quantity: number) => {
-    const res = await fetch("http://localhost:3049/api/cart/add", {
+    const res = await fetch(`${import.meta.env.VITE_NODE_URL}/api/cart/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -86,7 +86,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   const updateQuantity = async (venueId: string, quantity: number) => {
     const res = await fetch(
-      `http://localhost:3049/api/cart/update/${venueId}`,
+      `${import.meta.env.VITE_NODE_URL}/api/cart/update/${venueId}`,
       {
         method: "PUT",
         headers: {
@@ -107,7 +107,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   const removeFromCart = async (venueId: string) => {
     const res = await fetch(
-      `http://localhost:3049/api/cart/remove/${venueId}`,
+      `${import.meta.env.VITE_NODE_URL}/api/cart/remove/${venueId}`,
       {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },

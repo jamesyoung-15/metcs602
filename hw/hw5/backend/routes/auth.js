@@ -10,11 +10,9 @@ import multer from 'multer';
 import User from '../models/User.js';
 import { authMiddleware } from '../middleware/auth_middleware.js';
 import dotenv from 'dotenv';
-
-dotenv.config();
+import config from '../config/index.js';
 
 const router = express.Router();
-const JWT_SECRET = process.env.JWT_SECRET;
 
 /**
  * Multer storage configuration for profile picture uploads.
@@ -46,7 +44,7 @@ router.post('/register', async (req, res) => {
     const user = new User({ username, password, name, defaultLanguage });
     await user.save();
 
-    const token = jwt.sign({ userId: user._id }, JWT_SECRET);
+    const token = jwt.sign({ userId: user._id }, config.jwtSecret);
     res.json({
       token,
       user: {
@@ -81,7 +79,7 @@ router.post('/login', async (req, res) => {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
 
-    const token = jwt.sign({ userId: user._id }, JWT_SECRET);
+    const token = jwt.sign({ userId: user._id }, config.jwtSecret);
     res.json({
       token,
       user: {
